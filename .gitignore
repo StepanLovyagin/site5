@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+
+npm-debug.log*
+node_modules/
+
+*
+
+!*/
+
+!*.html
+!*.css
+!*.js
+!.gitignore

@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --primary-color: #2c5530;
+    --secondary-color: #f0f0f0;
+    --text-color: #2A254B;
+    --font-family: 'Inter', system-ui, sans-serif;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: #fff;
+    line-height: 1.5;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    font-size: 17px;
+}
+
+.nav__link:hover {
+    background-color: #f0f0f0;
+    color: var(--primary-color);
+}
+
+.content-grid {
+    padding: 80px;
+}
+
+.content-grid__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.content-card {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#features .content-card img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-bottom: 16px;
+    display: block;
+}
+
+#products .content-card img,
+#popular .content-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.masonry-grid {
+    padding: 80px;
+}
+
+.masonry-grid__container {
+    column-count: 3;
+    column-gap: 24px;
+}
+
+.masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 1em;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.hero {
+    background-color: #2A254B;
+    color: white;
+    padding: 60px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 500px;
+}
+
+.hero__content { flex: 1; }
+.hero__image { width: 400px; }
+
+.button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 32px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.button--dark {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button--dark:active {
+    transform: scale(0.95);
+}
+
+.about-brand {
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-brand__content {
+    flex: 1 1 400px;
+}
+
+.about-brand__image {
+    flex: 1 1 400px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #2A254B;
+    color: white;
+    padding: 80px;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+@media (max-width: 1199px) {
+    .header, .hero, .content-grid, .masonry-grid, .footer, .about-brand {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero, .about-brand {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero__image, .about-brand__image {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .masonry-grid__container {
+        column-count: 2;
+    }
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
